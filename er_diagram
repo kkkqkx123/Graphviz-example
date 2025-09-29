@@ -1,0 +1,26 @@
+digraph "ER图" {
+	rankdir=LR size="8,5"
+	"学生" [shape=box]
+	"课程" [shape=box]
+	"教师" [shape=box]
+	"学号" [shape=ellipse]
+	"学生姓名" [shape=ellipse]
+	"课程号" [shape=ellipse]
+	"课程名" [shape=ellipse]
+	"教师编号" [shape=ellipse]
+	"教师姓名" [shape=ellipse]
+	"成绩" [shape=ellipse]
+	"学号" -> "学生"
+	"学生姓名" -> "学生"
+	"课程号" -> "课程"
+	"课程名" -> "课程"
+	"教师编号" -> "教师"
+	"教师姓名" -> "教师"
+	"选修" [shape=diamond]
+	"讲授" [shape=diamond]
+	"学生" -> "选修" [label=m]
+	"选修" -> "课程" [label=n]
+	"选修" -> "成绩"
+	"课程" -> "讲授" [label=n]
+	"讲授" -> "教师" [label=1]
+}
